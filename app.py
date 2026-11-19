@@ -10,9 +10,7 @@ from transformers import AutoTokenizer, AutoModel
 from torch.nn.utils.rnn import pack_padded_sequence
 
 
-# ==========================================
-# 1. KONFIGURASI
-# ==========================================
+# KONFIGURASI
 
 BASE_DIR = Path(__file__).resolve().parent
 MODEL_DIR = BASE_DIR / "model"
@@ -30,9 +28,7 @@ print("Konfigurasi:", config)
 print("Label:", labels)
 
 
-# ==========================================
-# 2. ARSITEKTUR GRU
-# ==========================================
+# ARSITEKTUR GRU
 
 class GRUClassifier(nn.Module):
 
@@ -77,9 +73,7 @@ class GRUClassifier(nn.Module):
         return logits, probabilities
 
 
-# ==========================================
-# 3. MEMUAT TOKENIZER DAN INDOBERT
-# ==========================================
+# MEMUAT TOKENIZER DAN INDOBERT
 
 print("\nMemuat tokenizer dan IndoBERT...")
 
@@ -99,9 +93,7 @@ for param in indobert.parameters():
     param.requires_grad = False
 
 
-# ==========================================
-# 4. MEMUAT MODEL GRU
-# ==========================================
+# MEMUAT MODEL GRU
 
 print("\nMemuat model GRU...")
 
@@ -134,9 +126,7 @@ model.eval()
 print("Model GRU berhasil dimuat!")
 
 
-# ==========================================
-# 5. PREPROCESSING
-# ==========================================
+# PREPROCESSING
 
 normalization_dict = {
     "gak": "tidak",
@@ -179,9 +169,7 @@ def preprocessing(text):
     return text
 
 
-# ==========================================
-# 6. PEMILIHAN BAGIAN CERITA
-# ==========================================
+# PEMILIHAN BAGIAN CERITA
 
 def select_story_parts(text):
 
@@ -205,9 +193,7 @@ def select_story_parts(text):
     return " ".join(selected_words)
 
 
-# ==========================================
-# 7. FUNGSI PREDIKSI
-# ==========================================
+# FUNGSI PREDIKSI
 
 def predict_single_story(text):
 
@@ -276,9 +262,7 @@ def predict_single_story(text):
     }
 
 
-# ==========================================
-# 8. FLASK APPLICATION
-# ==========================================
+# FLASK APPLICATION
 
 app = Flask(__name__)
 
@@ -289,7 +273,7 @@ def home():
 @app.route("/tentang", methods=["GET"])
 def tentang():
     return render_template("about.html")
-    
+
 from flask import Flask, request, jsonify, render_template
 
 
@@ -338,9 +322,7 @@ def predict():
         }), 500
 
 
-# ==========================================
-# 9. MENJALANKAN SERVER
-# ==========================================
+# MENJALANKAN SERVER
 
 if __name__ == "__main__":
 
