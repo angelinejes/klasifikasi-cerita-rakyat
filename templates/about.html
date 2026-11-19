@@ -1,0 +1,165 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="{{ url_for('static', filename='manifest.json') }}">
+    <meta name="theme-color" content="#2B4669">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <!-- Navigasi -->
+    <header class="navbar">
+        <a href="/" class="brand">
+            <span class="brand-icon">📖</span>
+            <span>Cerita Rakyat</span>
+        </a>
+
+        <nav>
+            <a href="/" class="nav-link">Klasifikasi</a>
+            <a href="/tentang" class="nav-link active">Tentang Model</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- Pengantar -->
+        <section class="about-hero">
+            <p class="eyebrow">MENGENAL TEKNOLOGI DI BALIK APLIKASI</p>
+            <h1>Tentang Model</h1>
+            <p class="description">
+                Aplikasi ini menggunakan kombinasi IndoBERT dan
+                Gated Recurrent Unit (GRU) untuk mengklasifikasikan
+                cerita rakyat Indonesia ke dalam tiga kategori.
+            </p>
+        </section>
+
+        <!-- IndoBERT -->
+        <section class="about-card">
+            <h2>🤖 IndoBERT</h2>
+            <p>
+                IndoBERT merupakan model bahasa berbasis Transformer
+                yang telah dilatih menggunakan teks berbahasa Indonesia.
+                Dalam aplikasi ini, IndoBERT digunakan untuk mengubah
+                teks cerita rakyat menjadi representasi numerik
+                (embedding) yang menggambarkan konteks kata.
+            </p>
+        </section>
+
+        <!-- GRU -->
+        <section class="about-card">
+            <h2>🔄 Gated Recurrent Unit (GRU)</h2>
+            <p>
+                GRU merupakan jenis Recurrent Neural Network (RNN)
+                yang menggunakan mekanisme gerbang untuk mengolah
+                informasi secara berurutan. Dalam penelitian ini,
+                GRU menerima embedding dari IndoBERT untuk mempelajari
+                pola teks dan melakukan klasifikasi cerita rakyat.
+            </p>
+        </section>
+
+        <!-- Arsitektur -->
+        <section class="about-card">
+            <h2>⚙️ Arsitektur Model</h2>
+            <p>
+                Proses klasifikasi dilakukan melalui tahapan berikut:
+            </p>
+
+            <div class="architecture">
+                <div class="architecture-step">Teks Cerita Rakyat</div>
+                <span>↓</span>
+                <div class="architecture-step">Preprocessing</div>
+                <span>↓</span>
+                <div class="architecture-step">Tokenisasi IndoBERT</div>
+                <span>↓</span>
+                <div class="architecture-step">IndoBERT (Embedding)</div>
+                <span>↓</span>
+                <div class="architecture-step">GRU</div>
+                <span>↓</span>
+                <div class="architecture-step">Dense</div>
+                <span>↓</span>
+                <div class="architecture-step">Softmax</div>
+                <span>↓</span>
+                <div class="architecture-step final-step">
+                    Hasil Klasifikasi
+                </div>
+            </div>
+        </section>
+
+        <!-- Kategori -->
+        <section class="about-card">
+            <h2>📚 Kategori Cerita Rakyat</h2>
+            <p>
+                Model mengklasifikasikan cerita rakyat ke dalam
+                tiga kategori berikut:
+            </p>
+
+            <div class="category-grid">
+                <div class="category-item">
+                    <span>🦌</span>
+                    <h3>Fabel</h3>
+                    <p>Cerita yang tokohnya berupa hewan dengan perilaku seperti manusia.</p>
+                </div>
+
+                <div class="category-item">
+                    <span>🏯</span>
+                    <h3>Legenda</h3>
+                    <p>Cerita rakyat yang berkaitan dengan asal-usul suatu tempat atau peristiwa.</p>
+                </div>
+
+                <div class="category-item">
+                    <span>🌙</span>
+                    <h3>Mitos</h3>
+                    <p>Cerita tradisional yang berkaitan dengan kepercayaan dan hal-hal gaib.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dataset -->
+        <section class="about-card">
+            <h2>📊 Dataset Penelitian</h2>
+            <p>
+                Model dikembangkan menggunakan dataset cerita rakyat
+                Indonesia yang terdiri dari tiga kategori klasifikasi.
+            </p>
+
+            <div class="dataset-info">
+                <div>
+                    <h3>221</h3>
+                    <p>Total Cerita</p>
+                </div>
+                <div>
+                    <h3>3</h3>
+                    <p>Kategori</p>
+                </div>
+                <div>
+                    <h3>IndoBERT</h3>
+                    <p>Model Representasi Teks</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Evaluasi -->
+        <section class="about-card">
+            <h2>📈 Evaluasi Model</h2>
+            <p>
+                Kinerja model dievaluasi menggunakan metrik
+                Accuracy, Precision, Recall, dan F1-Score.
+                Evaluasi dilakukan untuk mengetahui kemampuan
+                model dalam mengklasifikasikan cerita rakyat.
+            </p>
+            <p class="evaluation-note">
+                Hasil evaluasi penelitian akan ditampilkan pada bagian ini.
+            </p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Klasifikasi Cerita Rakyat Indonesia</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,17 @@
+
+.venv/
+__pycache__/
+*.py[cod]
+.env
+.env.*
+!.env.example
+*.log
+
+# Model dan dataset berukuran besar
+*.bin
+*.safetensors
+*.h5
+*.keras
+*.onnx
+*.xlsx
+*.csv

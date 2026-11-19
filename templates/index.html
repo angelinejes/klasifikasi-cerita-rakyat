@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="{{ url_for('static', filename='manifest.json') }}">
+    <meta name="theme-color" content="#2B4669">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <!-- Navigasi -->
+    <header class="navbar">
+        <a href="/" class="brand">
+            <span class="brand-icon">📖</span>
+            <span>Cerita Rakyat</span>
+        </a>
+
+        <nav>
+            <a href="/" class="nav-link active">Klasifikasi</a>
+            <a href="/tentang" class="nav-link">Tentang Model</a>
+        </nav>
+    </header>
+
+    <!-- Bagian utama -->
+    <main>
+        <section class="hero">
+            <div class="hero-text">
+                <p class="eyebrow">MENGENAL KEKAYAAN BUDAYA INDONESIA</p>
+
+                <h1>Klasifikasi<br>Cerita Rakyat</h1>
+
+                <p class="description">
+                    Kenali jenis cerita rakyat Indonesia menggunakan
+                    teknologi IndoBERT dan GRU.
+                </p>
+            </div>
+
+            <div class="hero-illustration">
+    <div class="illustration-card">
+        <img src="{{ url_for('static', filename='images/logo.png') }}"
+             alt="Logo Klasifikasi Cerita Rakyat Indonesia"
+             class="hero-logo">
+    </div>
+</div>
+        </section>
+
+        <!-- Form klasifikasi -->
+        <section class="classification-card">
+            <h2>✒️ Masukkan Teks Cerita Rakyat</h2>
+
+            <textarea
+                id="story-text"
+                placeholder="Tuliskan atau tempelkan cerita rakyat di sini..."
+            ></textarea>
+
+            <button id="classify-button" onclick="classifyStory()">
+                ✨ Klasifikasikan
+            </button>
+
+            <p id="error-message" class="error-message"></p>
+        </section>
+
+        <!-- Hasil klasifikasi -->
+        <section id="result-section" class="result-card" hidden>
+            <div class="result-heading">
+                <h2>🏆 Hasil Klasifikasi</h2>
+                <p>Prediksi jenis cerita rakyat:</p>
+                <h3 id="prediction-label">-</h3>
+            </div>
+
+            <div id="probability-list"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Klasifikasi Cerita Rakyat Indonesia</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
