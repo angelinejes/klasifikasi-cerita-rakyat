@@ -1,0 +1,24 @@
+
+{
+    "name": "Klasifikasi Cerita Rakyat Indonesia",
+    "short_name": "Cerita Rakyat",
+    "description": "Aplikasi klasifikasi cerita rakyat Indonesia menggunakan IndoBERT dan GRU.",
+    "start_url": "./",
+    "scope": "./",
+    "display": "standalone",
+    "background_color": "#F7FAFC",
+    "theme_color": "#2B4669",
+    "orientation": "portrait",
+    "icons": [
+        {
+            "src": "static/images/icon-192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "static/images/icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}

@@ -6,6 +6,7 @@ import torch.nn as nn
 
 from pathlib import Path
 from flask import Flask, request, jsonify, render_template
+from flask_cors import CORS
 from transformers import AutoTokenizer, AutoModel
 from torch.nn.utils.rnn import pack_padded_sequence
 
@@ -265,6 +266,13 @@ def predict_single_story(text):
 # FLASK APPLICATION
 
 app = Flask(__name__)
+CORS(app, resources={
+    r"/api/*": {
+        "origins": [
+            "https://angelinejes.github.io"
+        ]
+    }
+})
 
 @app.route("/", methods=["GET"])
 def home():
@@ -273,8 +281,6 @@ def home():
 @app.route("/tentang", methods=["GET"])
 def tentang():
     return render_template("about.html")
-
-from flask import Flask, request, jsonify, render_template
 
 
 @app.route("/api/predict", methods=["POST"])

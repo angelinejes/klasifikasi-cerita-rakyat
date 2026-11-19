@@ -1,0 +1,517 @@
+
+/* 
+   PENGATURAN DASAR */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --navy: #2B4669;
+    --navy-dark: #203955;
+    --white: #F7FAFC;
+    --blue-light: #EAF2F8;
+    --cream: #FFF9EF;
+    --gold: #D9A94F;
+    --text: #263D59;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: var(--white);
+    color: var(--text);
+    min-height: 100vh;
+}
+
+/* 
+   NAVIGASI */
+
+.navbar {
+    background: var(--navy);
+    color: white;
+    padding: 18px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.12);
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: white;
+    text-decoration: none;
+    font-family: Georgia, serif;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.brand-icon {
+    font-size: 32px;
+}
+
+.navbar nav {
+    display: flex;
+    gap: 18px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: white;
+    padding: 11px 20px;
+    border-radius: 30px;
+    transition: 0.3s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    background: white;
+    color: var(--navy);
+}
+
+/* 
+   BAGIAN HERO */
+
+main {
+    background:
+        radial-gradient(circle at 90% 15%, #EAF2F8 0, transparent 35%),
+        linear-gradient(135deg, #FFF9EF, #F7FAFC);
+    padding: 50px 7% 65px;
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 35px;
+    min-height: 330px;
+    margin-bottom: 35px;
+}
+
+.hero-text {
+    flex: 1;
+}
+
+.eyebrow {
+    color: #A47A35;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 18px;
+}
+
+.hero h1 {
+    font-family: Georgia, serif;
+    font-size: clamp(38px, 5vw, 65px);
+    line-height: 1.08;
+    color: var(--navy);
+    margin-bottom: 20px;
+}
+
+.description {
+    font-size: 17px;
+    line-height: 1.7;
+    max-width: 480px;
+    color: #526579;
+}
+
+/* Placeholder ilustrasi */
+
+.hero-illustration {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.illustration-placeholder {
+    width: 100%;
+    max-width: 490px;
+    min-height: 280px;
+    background: linear-gradient(145deg, #EAF2F8, #F8E8CC);
+    border-radius: 45% 45% 25px 25px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    padding: 25px;
+    box-shadow: 0 12px 30px rgba(43,70,105,0.12);
+}
+
+.illustration-placeholder span {
+    font-size: 65px;
+}
+
+.illustration-placeholder p {
+    width: 100%;
+    text-align: center;
+    color: var(--navy);
+    font-family: Georgia, serif;
+    font-weight: bold;
+}
+
+/* 
+   FORM KLASIFIKASI */
+
+
+.classification-card {
+    background: white;
+    border-radius: 22px;
+    padding: 32px;
+    box-shadow: 0 8px 28px rgba(43,70,105,0.10);
+    margin-bottom: 25px;
+}
+
+.classification-card h2 {
+    font-family: Georgia, serif;
+    color: var(--navy);
+    font-size: 23px;
+    margin-bottom: 20px;
+}
+
+textarea {
+    width: 100%;
+    min-height: 150px;
+    padding: 18px;
+    border: 2px solid #D8E3EF;
+    border-radius: 14px;
+    font-family: inherit;
+    font-size: 15px;
+    resize: vertical;
+    outline: none;
+    transition: 0.3s;
+}
+
+textarea:focus {
+    border-color: var(--navy);
+    box-shadow: 0 0 0 3px rgba(43,70,105,0.08);
+}
+
+textarea::placeholder {
+    color: #8996A6;
+}
+
+#classify-button {
+    width: 100%;
+    margin-top: 20px;
+    padding: 16px;
+    border: none;
+    border-radius: 13px;
+    background: var(--navy);
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#classify-button:hover {
+    background: var(--navy-dark);
+    transform: translateY(-2px);
+}
+
+#classify-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.error-message {
+    color: #C0392B;
+    margin-top: 12px;
+}
+
+/* =========================
+   HASIL KLASIFIKASI
+========================= */
+
+.result-card {
+    background: white;
+    border: 2px solid #D8E3EF;
+    border-radius: 22px;
+    padding: 30px;
+    box-shadow: 0 8px 25px rgba(43,70,105,0.08);
+}
+
+.result-heading {
+    margin-bottom: 25px;
+}
+
+.result-heading h2 {
+    color: var(--navy);
+    font-family: Georgia, serif;
+    margin-bottom: 15px;
+}
+
+.result-heading h3 {
+    display: inline-block;
+    background: var(--blue-light);
+    color: var(--navy);
+    padding: 10px 22px;
+    border-radius: 12px;
+    font-size: 24px;
+    margin-top: 10px;
+    text-transform: capitalize;
+}
+
+.probability-item {
+    margin-top: 18px;
+}
+
+.probability-label {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 12px;
+    background: #E3EBF3;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #527DB5, #8CB6DD);
+    border-radius: 20px;
+}
+
+/* 
+   FOOTER */
+
+footer {
+    background: var(--navy);
+    color: white;
+    text-align: center;
+    padding: 22px;
+    font-size: 13px;
+}
+
+/* 
+   RESPONSIVE */
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 15px 5%;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .brand {
+        font-size: 20px;
+    }
+
+    .navbar nav {
+        gap: 5px;
+    }
+
+    .nav-link {
+        padding: 9px 12px;
+        font-size: 13px;
+    }
+
+    main {
+        padding: 35px 5%;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .description {
+        margin: auto;
+    }
+
+    .hero-illustration {
+        width: 100%;
+    }
+
+    .classification-card,
+    .result-card {
+        padding: 22px;
+    }
+}
+
+/* 
+   HALAMAN ABOUT */
+
+
+.about-hero {
+    text-align: center;
+    max-width: 750px;
+    margin: 0 auto 35px;
+    padding: 35px 15px;
+}
+
+.about-hero h1 {
+    font-family: Georgia, serif;
+    font-size: 48px;
+    color: var(--navy);
+    margin-bottom: 18px;
+}
+
+.about-hero .description {
+    max-width: 680px;
+    margin: auto;
+}
+
+.about-card {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    margin-bottom: 24px;
+    box-shadow: 0 6px 22px rgba(43,70,105,0.08);
+}
+
+.about-card h2 {
+    font-family: Georgia, serif;
+    color: var(--navy);
+    margin-bottom: 15px;
+}
+
+.about-card > p {
+    line-height: 1.8;
+    color: #526579;
+}
+
+.architecture {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 25px;
+    gap: 9px;
+}
+
+.architecture-step {
+    width: 80%;
+    max-width: 420px;
+    padding: 15px;
+    text-align: center;
+    background: var(--blue-light);
+    color: var(--navy);
+    border-radius: 12px;
+    font-weight: 600;
+}
+
+.architecture > span {
+    color: var(--navy);
+    font-size: 22px;
+}
+
+.architecture .final-step {
+    background: var(--navy);
+    color: white;
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-top: 25px;
+}
+
+.category-item {
+    background: var(--blue-light);
+    padding: 22px;
+    text-align: center;
+    border-radius: 16px;
+}
+
+.category-item span {
+    font-size: 38px;
+}
+
+.category-item h3 {
+    color: var(--navy);
+    margin: 10px 0;
+}
+
+.category-item p {
+    color: #526579;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.dataset-info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.dataset-info div {
+    background: var(--blue-light);
+    padding: 22px 10px;
+    border-radius: 14px;
+    text-align: center;
+}
+
+.dataset-info h3 {
+    color: var(--navy);
+    font-size: 26px;
+    margin-bottom: 8px;
+}
+
+.dataset-info p {
+    color: #526579;
+    font-size: 13px;
+}
+
+.evaluation-note {
+    margin-top: 15px;
+    padding: 15px;
+    background: var(--blue-light);
+    border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+    .about-hero h1 {
+        font-size: 36px;
+    }
+
+    .category-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .dataset-info {
+        grid-template-columns: 1fr;
+    }
+
+    .architecture-step {
+        width: 100%;
+    }
+}
+
+/* 
+   BAGIAN LOGO */
+
+.hero-illustration {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.illustration-card {
+    width: 100%;
+    max-width: 300px;
+    padding: 8px;
+    background: #EAF2F8;
+    border-radius: 24px;
+    box-shadow: 0 8px 25px rgba(43, 70, 105, 0.10);
+    overflow: hidden;
+}
+
+.hero-logo {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 14px;
+    object-fit: contain;
+}
